@@ -28,7 +28,6 @@ class Cointick extends Component
         if ($lastTwo->first()->value >= $lastTwo->last()->value) {
             $this->direction = 'up';
         }
-        $this->lastTenDoges = Doge::latest()->take(10)->get();
 
         return view('livewire.cointick');
     }

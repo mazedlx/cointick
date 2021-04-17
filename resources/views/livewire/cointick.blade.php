@@ -2,7 +2,7 @@
     <div class="font-mono text-white">wow. much crypto. such money.</div>
     <div class="font-mono text-lg text-white">{{ date('H:i:s') }}</div>
 
-    <h1 class="font-mono text-6xl font-bold text-white">current € {{ $doge->value }}</h1>
+    <h1 class="font-mono text-6xl font-bold text-white">current € {{ $doge->value }} {{ $this->direction }}</h1>
 
     <h2 class="font-mono text-4xl font-bold text-white">total € {{ number_format($doge->value * $coins, 6) }}</h2>
 

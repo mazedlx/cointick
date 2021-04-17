@@ -15,6 +15,7 @@ class Cointick extends Component
     public $max;
     public $min;
     public $lastTenDoges;
+    public $direction;
 
     public function render()
     {
@@ -22,6 +23,11 @@ class Cointick extends Component
         $this->avg = Doge::latest()->take(10)->avg('value') / 10E6;
         $this->min = Doge::min('value') / 10E6;
         $this->max = Doge::max('value') / 10E6;
+        $lastTwo = Doge::latest()->take(2)->get();
+        $this->direction = 'down';
+        if ($lastTwo->first()->value >= $lastTwo->last()->value) {
+            $this->direction = 'up';
+        }
         $this->lastTenDoges = Doge::latest()->take(10)->get();
 
         return view('livewire.cointick');

@@ -9,4 +9,6 @@
     <h2 class="font-mono text-4xl font-bold text-white">avg € {{ number_format($avg, 6) }}</h2>
     <h2 class="font-mono text-4xl font-bold text-white">hi € {{ number_format($max, 6) }}</h2>
     <h2 class="font-mono text-4xl font-bold text-white">lo € {{ number_format($min, 6) }}</h2>
+
+    @livewire('chart')
 </div>

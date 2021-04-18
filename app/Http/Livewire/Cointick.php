@@ -25,6 +25,9 @@ class Cointick extends Component
         $this->max = Doge::max('value') / 10E6;
         $lastTwo = Doge::latest()->take(2)->get();
         $this->direction = 'down';
+        if ($lastTwo->first()->value === $lastTwo->last()->value) {
+            $this->direction = '~';
+        }
         if ($lastTwo->first()->value >= $lastTwo->last()->value) {
             $this->direction = 'up';
         }

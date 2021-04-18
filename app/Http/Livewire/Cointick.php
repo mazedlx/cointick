@@ -28,7 +28,7 @@ class Cointick extends Component
         if ($lastTwo->first()->value === $lastTwo->last()->value) {
             $this->direction = '~';
         }
-        if ($lastTwo->first()->value >= $lastTwo->last()->value) {
+        if ($lastTwo->first()->value > $lastTwo->last()->value) {
             $this->direction = 'up';
         }
 

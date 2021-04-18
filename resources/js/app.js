@@ -18,6 +18,9 @@ let dogeChart = new Chart(canvas, {
             y: {
                 min: 0.20,
                 max: 0.30,
+                ticks: {
+                    precision: 5
+                }
             }
         },
         tension: 0,
